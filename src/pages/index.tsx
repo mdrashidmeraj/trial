@@ -22,9 +22,9 @@ const IndexPage: FC<IndexProps> = (props) => {
   return (
     <>
       <h1>Home</h1>
-      <h1>{data?.articles.length}</h1>
+      <h1>{data?.articles?.length}</h1>
       <div>
-        {data?.articles.map((item: any) => (
+        {data?.articles?.map((item: any) => (
           <div key={item.title}>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
