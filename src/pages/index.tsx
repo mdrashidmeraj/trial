@@ -5,20 +5,20 @@ type IndexProps = {
   news: any;
 };
 const IndexPage: FC<IndexProps> = (props) => {
-  // const api = ⁠ https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f374be604b1f4a5b81c32502751e1c3a ⁠;
+  const api = `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f374be604b1f4a5b81c32502751e1c3a`;
 
-  // const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<any>(null);
 
-  // const fetchData = async () => {
-  //   const res = await fetch(api);
-  //   const jsonData = await res.json();
-  //   setData(jsonData);
-  // };
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-  // console.log(data);
-  const data = props?.news;
+  const fetchData = async () => {
+    const res = await fetch(api);
+    const jsonData = await res.json();
+    setData(jsonData);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  console.log(data);
+  // const data = props?.news;
   return (
     <>
       <h1>Home</h1>
